@@ -17,11 +17,10 @@
             >
           </view>
         </view>
-        <!--#ifdef MP-WEIXIN-->
         <button open-type="share" class="list-share">
           <text class="iconfont icon-fenxiang">分享给微信好友</text>
         </button>
-        <!--#endif-->
+
         <view class="list-music">
           <view class="list-music-head">
             <text class="iconfont icon-bofang"></text>
@@ -46,12 +45,16 @@
 
 <script>
 import musicHead from '../../components/musichead.vue'
+import { list } from '../../common/api'
 export default {
   data() {
     return {}
   },
   onLoad(options) {
     console.log(options.listId)
+    list(options.listId).then((res) => {
+      console.log(res)
+    })
   },
   components: {
     musicHead,
@@ -115,13 +118,56 @@ export default {
   background: rgba(0, 0, 0, 0.4);
 }
 .list-music {
+  background: red;
+  border-radius: 50rpx;
+  margin-top: 40rpx;
+  overflow: hidden;
 }
-.list-musci-head {
+.list-music-head {
+  height: 50rpx;
+  margin: 30rpx 0 70rpx 22rpx;
+}
+.list-music-head text:nth-child(1) {
+  height: 50rpx;
+  font-size: 50rpx;
+}
+.list-music-head text:nth-child(2) {
+  font-size: 30rpx;
+  margin: 0 10rpx 0 26rpx;
+}
+.list-music-head text:nth-child(3) {
+  font-size: 26rpx;
+  color: #b2b2b2;
 }
 .list-music-item {
+  display: flex;
+  margin: 0 32rpx 66rpx 46rpx;
+  align-items: center;
+  color: #959595;
+}
+.list-music-item text {
+  font-size: 50rpx;
+  color: #c7c7c7;
 }
 .list-music-top {
+  width: 58rpx;
+  font-size: 30rpx;
 }
 .list-music-song {
+  flex: 1;
+}
+.list-music-song view:nth-child(1) {
+  font-size: 28rpx;
+  color: black;
+}
+.list-music-song view:nth-child(2) {
+  display: flex;
+  font-size: 20rpx;
+  align-items: center;
+  margin-right: 10rpx;
+}
+.list-music-song view:nth-child(1) image {
+  width: 32rpx;
+  height: 20rpx;
 }
 </style>

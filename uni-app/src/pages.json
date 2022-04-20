@@ -11,12 +11,6 @@
 			"style": {
         "navigationStyle":"custom"
 			}
-		},
-    {
-			"path": "pages/test/test",
-			"style": {
-        "navigationStyle":"custom"
-			}
 		}
 	],
 	"globalStyle": {

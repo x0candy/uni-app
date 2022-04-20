@@ -12,7 +12,7 @@
             class="index-list-item"
             v-for="(item, index) in topList"
             :key="index"
-            @tap="handleToList(item.listId)"
+            @tap="handleToList(item.id)"
           >
             <view class="index-list-image">
               <image :src="item.coverImgUrl" mode="" />
@@ -42,6 +42,7 @@ export default {
   onLoad() {
     topList().then((res) => {
       if (res.length) this.topList = res
+      console.log(res)
     })
   },
   methods: {
