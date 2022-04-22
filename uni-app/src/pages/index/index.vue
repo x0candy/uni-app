@@ -42,7 +42,6 @@ export default {
   onLoad() {
     topList().then((res) => {
       if (res.length) this.topList = res
-      console.log(res)
     })
   },
   methods: {

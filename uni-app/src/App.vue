@@ -25,7 +25,6 @@ export default {
   height: 100vh;
   width: 100%;
   position: absolute;
-  background: url('./static/logo.png');
   background-position: center 0;
   filter: blur(10px);
   background-size: cover;
